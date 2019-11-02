@@ -39,10 +39,13 @@ class Grid extends React.Component {
                 return (
                   <Col>
                     <div key={id}>
-                      <img src={img_url} alt={make + ": " + model} />
+                      <img
+                        src={img_url}
+                        alt={make + ": " + model + " RRP: " + rrp}
+                      />
                       <h2>Make: {make}</h2>
                       <h3>Model: {model}</h3>
-                      <h4>RRP: {rrp}</h4>
+                      <h4>RRP: &pound;{rrp}</h4>
                       <p>CarWow rating: {carwow_rating}</p>
                     </div>
                   </Col>
