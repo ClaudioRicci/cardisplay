@@ -1,8 +1,8 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import { CarData } from "../interfaces/interfaces";
+import axios from "axios";
+
+import "./grid.scss";
 
 class Grid extends React.Component {
   state: Readonly<CarData> = {
@@ -12,15 +12,17 @@ class Grid extends React.Component {
   };
 
   fetchCars() {
-    fetch(`https://warm-dawn-92320.herokuapp.com/models`)
-      .then(response => response.json())
-      .then(data =>
+    axios
+      .get("https://warm-dawn-92320.herokuapp.com/models")
+      .then(response =>
         this.setState({
-          cars: data,
+          cars: response.data,
           isLoading: false
         })
       )
-      .catch(error => this.setState({ error, isLoading: false }));
+      .then(error => {
+        this.setState({ error, isLoading: false });
+      });
   }
 
   componentDidMount() {
@@ -30,32 +32,68 @@ class Grid extends React.Component {
     const { isLoading, cars, error } = this.state;
     return (
       <>
-        <Container>
-          <Row>
-            {error ? <p>{error.message}</p> : null}
-            {!isLoading ? (
-              cars.map(car => {
-                const { id, make, model, img_url, rrp, carwow_rating } = car;
-                return (
-                  <Col>
-                    <div key={id}>
-                      <img
-                        src={img_url}
-                        alt={make + ": " + model + " RRP: " + rrp}
-                      />
-                      <h2>Make: {make}</h2>
-                      <h3>Model: {model}</h3>
-                      <h4>RRP: &pound;{rrp}</h4>
-                      <p>CarWow rating: {carwow_rating}</p>
+        <main className="main-area">
+          <div className="centered">
+            <div className="cards">
+              {error ? <p>{error.message}</p> : null}
+              {!isLoading ? (
+                cars.map(car => {
+                  const { id, make, model, img_url, rrp, carwow_rating } = car;
+                  return (
+                    <div key={id} className="card">
+                      <a href={model} title={model}>
+                        <img
+                          src={img_url}
+                          alt={make + ": " + model + ", RRP: " + rrp}
+                        />
+                        <h2>Make: {make}</h2>
+                        <h2>Model: {model}</h2>
+                        <h2>RRP: &pound;{rrp}</h2>
+                        <span
+                          className={
+                            carwow_rating > 0
+                              ? "fa fa-star checked"
+                              : "fa fa-star"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            carwow_rating > 2
+                              ? "fa fa-star checked"
+                              : "fa fa-star"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            carwow_rating > 4
+                              ? "fa fa-star checked"
+                              : "fa fa-star"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            carwow_rating > 6
+                              ? "fa fa-star checked"
+                              : "fa fa-star"
+                          }
+                        ></span>
+                        <span
+                          className={
+                            carwow_rating > 8
+                              ? "fa fa-star checked"
+                              : "fa fa-star"
+                          }
+                        ></span>
+                      </a>
                     </div>
-                  </Col>
-                );
-              })
-            ) : (
-              <h1>Cars Loading...</h1>
-            )}
-          </Row>
-        </Container>
+                  );
+                })
+              ) : (
+                <h1>Cars Loading...</h1>
+              )}
+            </div>
+          </div>
+        </main>
       </>
     );
   }
