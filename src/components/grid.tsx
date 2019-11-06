@@ -46,9 +46,22 @@ class Grid extends React.Component {
                           src={img_url}
                           alt={make + ": " + model + ", RRP: " + rrp}
                         />
-                        <h2>Make: {make}</h2>
-                        <h2>Model: {model}</h2>
-                        <h2>RRP: &pound;{rrp}</h2>
+                        <div className="detailsSurround">
+                          <div className="leftSectionSurround">
+                            <div className="leftSection">
+                              <h2>Make:</h2>
+                              <h2>Model:</h2>
+                              <h2>RRP:</h2>
+                            </div>
+                          </div>
+                          <div className="rightSectionSurround">
+                            <div className="rightSection">
+                              <p>{make}</p>
+                              <p>{model}</p>
+                              <p>&pound;{rrp}</p>
+                            </div>
+                          </div>
+                        </div>
                         <span
                           className={
                             carwow_rating > 0
