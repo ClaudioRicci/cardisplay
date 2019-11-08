@@ -1,12 +1,10 @@
 body {
   font-family: "Varela", sans-serif;
   background: #ccc;
-  line-height: 1.4em;
 }
 
 h2 {
   font-size: 1.2em;
-  line-height: 0.6em;
 }
 
 h3 {
@@ -16,6 +14,10 @@ h3 {
 
 p {
   font-size: 1em;
+}
+
+h2,
+p {
   line-height: 0.6em;
 }
 
@@ -35,14 +37,13 @@ p {
   text-align: center;
   font-size: 1em;
   transition: 0.5s;
-  padding: 1em 0;
-  flex: 1 0 500px;
+  padding: 1em 0 2em;
+  flex: 1 0 290px;
   box-sizing: border-box;
   margin: 1rem 0.25em;
 
   img {
     width: 90%;
-    height: auto;
     display: block;
     margin: 0 auto;
   }
@@ -54,6 +55,7 @@ p {
   border-radius: 1em;
   color: #000;
 }
+
 .detailsSurround {
   .leftSection,
   .rightSection {
@@ -65,29 +67,25 @@ p {
     position: absolute;
     left: 0;
   }
+
   .leftSectionSurround {
     height: 0;
     border-bottom: 120px solid #fff;
     border-right: 100px solid transparent;
-    position: relative;
     z-index: 2;
 
     .leftSection {
       color: #000;
-      position: absolute;
-      left: 0;
     }
   }
+
   .rightSectionSurround {
-    height: 0;
     border-bottom: 100px solid #000;
     border-left: 20px solid transparent;
-    position: relative;
     top: -115px;
     z-index: 3;
-    right: -30%;
+    right: -29.6%;
     width: 63%;
-    position: relative;
 
     .rightSection {
       color: #fff;
@@ -99,12 +97,20 @@ p {
     }
   }
 
+  .leftSectionSurround,
+  .rightSectionSurround {
+    height: 0;
+    position: relative;
+  }
+
   .price,
   .checked {
     color: #ffa500;
   }
+
   .carwowRating {
     margin-top: -80px;
+
     .fa {
       font-size: 1.6em;
     }
@@ -114,23 +120,17 @@ p {
 .button {
   border-radius: 1em;
   background: #ffa500;
-  border: none;
   color: #000;
   text-align: center;
-  display: inline-block;
   font-size: 1.4em;
-  padding: 0.5vw 2vw;
-  width: auto;
+  padding: 0.5em 2vw;
+  width: 70%;
   transition: all 0.5s;
-  cursor: pointer;
   margin: 3vh 0 0;
 }
 
 .button span {
-  cursor: pointer;
-  display: inline-block;
   position: relative;
-  transition: 0.5s;
 }
 
 .button span:after {
@@ -139,11 +139,21 @@ p {
   opacity: 0;
   top: 0;
   right: -20px;
+}
+
+.button span,
+.button span:after {
   transition: 0.5s;
 }
 
+.button,
+.button span {
+  cursor: pointer;
+  display: inline-block;
+}
+
 .button:hover span {
-  padding-right: 25px;
+  padding-right: 1em;
 }
 
 .button:hover span:after {
