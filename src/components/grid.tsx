@@ -104,6 +104,13 @@ export default function Grid() {
       </main>
     );
   } else {
-    return <div>Loading...</div>;
+    return (
+      <main className="main-area">
+        <div className="centered-circle">
+          <h1>Loading...</h1>
+          <div className="loader"></div>
+        </div>
+      </main>
+    );
   }
 }
