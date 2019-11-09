@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { getItem } from "../methods/generalMethods";
+import React, { useState, useEffect, Fragment } from "react";
+import Button from "../Button/Button";
+import LoadingCircle from "../LoadingCircle/LoadingCircle";
+import { getItem } from "../../methods/generalMethods";
+import uuid from "uuid";
 // import { CarData } from "../interfaces/interfaces";
-import "./grid.scss";
+import "./Grid.scss";
+import { pure } from "recompose";
 
-export default function Grid() {
+function Grid() {
   const [cars, setCars] = useState(null);
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
@@ -29,10 +33,10 @@ export default function Grid() {
               <h1>{error.message}</h1>
             ) : (
               cars.map(car => {
-                const { id, make, model, img_url, rrp, carwow_rating } = car;
+                const { make, model, img_url, rrp, carwow_rating } = car;
                 return (
-                  <>
-                    <article key={id} className="card">
+                  <Fragment key={uuid.v4()}>
+                    <article className="card">
                       <img
                         src={img_url}
                         alt={make + ": " + model + ", RRP: " + rrp}
@@ -93,9 +97,10 @@ export default function Grid() {
                         <a className="button" href={model} title={model}>
                           <span>Get Offer</span>
                         </a>
+                        <Button href={model} title={model} />
                       </div>
                     </article>
-                  </>
+                  </Fragment>
                 );
               })
             )}
@@ -106,11 +111,10 @@ export default function Grid() {
   } else {
     return (
       <main className="main-area">
-        <div className="centered-circle">
-          <h1>Loading...</h1>
-          <div className="loader"></div>
-        </div>
+        <LoadingCircle />
       </main>
     );
   }
 }
+
+export default pure(Grid);
