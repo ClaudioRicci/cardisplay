@@ -1,10 +1,10 @@
 import React, { useState, useEffect, Fragment } from "react";
 import Button from "../Button/Button";
+import "./Grid.scss";
 import LoadingCircle from "../LoadingCircle/LoadingCircle";
 import { getItem } from "../../methods/generalMethods";
 import uuid from "uuid";
 // import { CarData } from "../interfaces/interfaces";
-import "./Grid.scss";
 import { pure } from "recompose";
 
 function Grid() {
