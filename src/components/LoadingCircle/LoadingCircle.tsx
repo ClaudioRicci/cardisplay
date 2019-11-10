@@ -5,7 +5,7 @@ import { pure } from "recompose";
 function LoadingCircle() {
   return (
     <>
-      <div className="centered-circle">
+      <div className="centered-circle" data-testid="loadingCircle">
         <h1>Loading...</h1>
         <div className="loader"></div>
       </div>

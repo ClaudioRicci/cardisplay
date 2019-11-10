@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<div
+  className="centered-circle"
+  data-testid="loadingCircle"
+>
+  <h1>
+    Loading...
+  </h1>
+  <div
+    className="loader"
+  />
+</div>
+`;
