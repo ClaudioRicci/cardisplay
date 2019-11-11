@@ -4,6 +4,11 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `npm run analyse`
+
+Runs webpack-bundle-analyzer which shows a visual representation of the sizes of the various code bundles. This helps identify areas for performance optimisation.
+Open [http://127.0.0.1:8888/](http://127.0.0.1:8888/) to view it in the browser.
+
 ### `yarn start`
 
 Runs the app in the development mode.<br />
