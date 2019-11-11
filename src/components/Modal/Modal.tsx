@@ -10,7 +10,6 @@ export default function Modal({
   rrp,
   carwow_rating,
   summary,
-  showButtons,
   onClose
 }) {
   function useLockBodyScroll() {
@@ -26,6 +25,11 @@ export default function Modal({
   return (
     <div className="modal-overlay">
       <div className="modal">
+        <Button
+          label="Close"
+          onClick={onClose}
+          buttonType="button closeButton"
+        ></Button>
         <Card
           make={make}
           model={model}
@@ -33,9 +37,7 @@ export default function Modal({
           img_url={img_url}
           rrp={rrp}
           carwow_rating={carwow_rating}
-          showButtons={showButtons}
         />
-        <Button label="Close" onClick={onClose}></Button>
       </div>
     </div>
   );

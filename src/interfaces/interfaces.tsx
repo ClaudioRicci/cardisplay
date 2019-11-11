@@ -13,4 +13,5 @@ export interface CarProps {
   carwow_rating: number;
   label: string;
   summary: string;
+  buttonType: string;
 }

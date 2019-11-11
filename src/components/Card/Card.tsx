@@ -60,6 +60,9 @@ function Card(props) {
           <span>Get Offer</span>
         </a>
         <Button href={props.model} title={props.model} label="Get Offer" /> */}
+        <div className="summary">
+          <p>{props.summary}</p>
+        </div>
       </div>
       <button className="button" onClick={() => setModalOpen(true)}>
         <span>More Info</span>
@@ -72,7 +75,6 @@ function Card(props) {
           rrp={props.rrp}
           carwow_rating={props.carwow_rating}
           summary={props.summary}
-          showButtons={props.showButtons}
           onClose={() => setModalOpen(false)}
         />
       )}
