@@ -1,8 +1,9 @@
 import React from "react";
 import "./Button.scss";
 import { pure } from "recompose";
+import { CarProps } from "../../interfaces/interfaces";
 
-function Button(props) {
+const Button: React.SFC<CarProps> = props => {
   return (
     <a
       data-testid="button"
@@ -13,6 +14,12 @@ function Button(props) {
       <span>{props.label}</span>
     </a>
   );
-}
+};
+
+Button.defaultProps = {
+  model: "Panda",
+  make: "Fiat",
+  label: "Get Details"
+};
 
 export default pure(Button);

@@ -4,6 +4,8 @@ exports[`Matches snapshot 1`] = `
 <a
   className="button"
   data-testid="button"
+  href="Panda"
+  title="Panda"
 >
   <span>
     Get Offer

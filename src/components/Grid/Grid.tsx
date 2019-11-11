@@ -1,28 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Button from "../Button/Button";
 import "./Grid.scss";
 import LoadingCircle from "../LoadingCircle/LoadingCircle";
-
 import { getItem } from "../../methods/generalMethods";
 import uuid from "uuid";
-// import { CarData } from "../interfaces/interfaces";
 import { pure } from "recompose";
 
 function Grid() {
-  const [cars, setCars] = useState(null);
-  const [load, setLoad] = useState(false);
+  const firstUpdate = useRef(false);
   const [error, setError] = useState(null);
+  const [load, setLoad] = useState(false);
+  const [cars, setCars] = useState(null);
+
+  const allModels = "https://warm-dawn-92320.herokuapp.com/models";
 
   useEffect(() => {
-    getItem("https://warm-dawn-92320.herokuapp.com/models")
-      .then(res => {
-        setCars(res);
-        setLoad(true);
-      })
-      .catch(err => {
-        setError(err);
-        setLoad(true);
-      });
+    if (!firstUpdate.current) {
+      getItem(allModels)
+        .then(res => {
+          setCars(res);
+          setLoad(true);
+        })
+        .catch(err => {
+          setError(err);
+          setLoad(true);
+        });
+    }
+    firstUpdate.current = false;
   }, []);
 
   if (load) {
