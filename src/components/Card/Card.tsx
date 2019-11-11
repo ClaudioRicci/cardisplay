@@ -3,10 +3,15 @@ import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
 import uuid from "uuid";
 import { pure } from "recompose";
+import { useMediaQuery } from "react-responsive";
 import "./Card.scss";
 
 function Card(props) {
   const [modalOpen, setModalOpen] = useState(false);
+  const isTabletOrAbove = useMediaQuery({
+    query: "(min-device-width: 1025px)"
+  });
+
   return (
     <article key={uuid.v4()} className="card">
       <img
@@ -64,9 +69,17 @@ function Card(props) {
           <p>{props.summary}</p>
         </div>
       </div>
-      <button className="button" onClick={() => setModalOpen(true)}>
-        <span>More Info</span>
-      </button>
+
+      {isTabletOrAbove ? (
+        <button className="button" onClick={() => setModalOpen(true)}>
+          <span>More Info</span>
+        </button>
+      ) : (
+        <div className="mobileSummarySurround">
+          <p>{props.summary}</p>
+        </div>
+      )}
+
       {modalOpen && (
         <Modal
           model={props.model}

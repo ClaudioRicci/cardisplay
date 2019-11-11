@@ -34,17 +34,16 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
-  height: 500px;
+  height: auto;
 
   .card {
     width: 100%;
     max-width: 100%;
-    height: 477px;
 
     img {
       float: left;
       width: 60%;
-      margin: 1em;
+      margin: 1em 1.4em;
       position: relative;
       z-index: 2;
     }
@@ -54,7 +53,7 @@ button {
       position: absolute;
       bottom: 40px;
       z-index: 1;
-      right: 40px;
+      right: 6%;
     }
 
     .leftSectionSurround {
@@ -82,7 +81,7 @@ button {
     }
 
     .carwowRating {
-      top: 100px;
+      top: 110px;
       position: absolute;
       left: 6%;
     }
@@ -96,11 +95,16 @@ button {
       border-left: 100px solid transparent;
       z-index: 1;
       p {
-        line-height: 1.5em;
-        font-size: 1.4em;
+        line-height: 1.6em;
+        font-size: 1.6em;
         text-align: left;
-        padding: 0.4em 2em 0 0;
       }
     }
   }
+}
+
+@media screen and (min-width: 40em) {
+}
+
+@media screen and (min-width: 52em) {
 }
