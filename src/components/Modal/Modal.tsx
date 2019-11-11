@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import Button from "../Button/Button";
+import "./Modal.scss";
 
 export default function Modal({
   make,

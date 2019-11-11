@@ -17,7 +17,7 @@ const Button: React.SFC<CarProps> = props => {
 };
 
 Button.defaultProps = {
-  model: "Panda",
+  model: "",
   make: "Fiat",
   label: "Get Details"
 };
