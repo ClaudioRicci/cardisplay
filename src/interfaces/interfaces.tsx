@@ -12,4 +12,5 @@ export interface CarProps {
   rrp: number;
   carwow_rating: number;
   label: string;
+  summary: string;
 }

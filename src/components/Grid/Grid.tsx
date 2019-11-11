@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Button from "../Button/Button";
 import "./Grid.scss";
 import LoadingCircle from "../LoadingCircle/LoadingCircle";
+import Modal from "../Modal/Modal";
 import { getItem } from "../../methods/generalMethods";
 import uuid from "uuid";
 import { pure } from "recompose";
@@ -11,6 +12,7 @@ function Grid() {
   const [error, setError] = useState(null);
   const [load, setLoad] = useState(false);
   const [cars, setCars] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const allModels = "https://warm-dawn-92320.herokuapp.com/models";
 
@@ -38,7 +40,14 @@ function Grid() {
               <h1>{error.message}</h1>
             ) : (
               cars.map(car => {
-                const { make, model, img_url, rrp, carwow_rating } = car;
+                const {
+                  make,
+                  model,
+                  img_url,
+                  rrp,
+                  carwow_rating,
+                  summary
+                } = car;
                 return (
                   <article key={uuid.v4()} className="card">
                     <img
@@ -103,6 +112,23 @@ function Grid() {
                       </a>
                       <Button href={model} title={model} label="Get Offer" />
                     </div>
+
+                    <div className="bar">
+                      <button onClick={() => setModalOpen(true)}>
+                        Get Offer
+                      </button>
+                    </div>
+                    {modalOpen && (
+                      <Modal
+                        model={model}
+                        make={make}
+                        img_url={img_url}
+                        rrp={rrp}
+                        carwow_rating={carwow_rating}
+                        summary={summary}
+                        onClose={() => setModalOpen(false)}
+                      />
+                    )}
                   </article>
                 );
               })
