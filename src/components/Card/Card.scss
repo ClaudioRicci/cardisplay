@@ -1,0 +1,99 @@
+.card {
+  background: #ee2c2c;
+  border-radius: 1em;
+  text-align: center;
+  font-size: 1em;
+  transition: 0.5s;
+  padding: 1em 0 2em;
+  flex: 1 0 290px;
+  box-sizing: border-box;
+  margin: 1rem 0.25em;
+
+  img {
+    width: 90%;
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.card:hover {
+  box-shadow: 3px 3px 8px hsl(0, 0%, 70%);
+  background: #00a4ff;
+  border-radius: 1em;
+  color: #000;
+}
+
+.detailsSurround {
+  .leftSection,
+  .rightSection {
+    width: 100%;
+    margin: 0;
+    padding: 0.5em;
+    display: inline-block;
+    text-align: left;
+    position: absolute;
+    left: 0;
+  }
+
+  .leftSectionSurround {
+    height: 0;
+    border-bottom: 120px solid #fff;
+    border-right: 100px solid transparent;
+    z-index: 2;
+
+    .leftSection {
+      color: #000;
+    }
+  }
+
+  .rightSectionSurround {
+    border-bottom: 100px solid #000;
+    border-left: 20px solid transparent;
+    top: -115px;
+    z-index: 3;
+    right: -29.6%;
+    width: 63%;
+
+    .rightSection {
+      color: #fff;
+
+      .price {
+        font-size: 1.4em;
+        line-height: 0;
+      }
+    }
+  }
+
+  .leftSectionSurround,
+  .rightSectionSurround {
+    height: 0;
+    position: relative;
+  }
+
+  .price,
+  .checked {
+    color: #ffa500;
+  }
+
+  .carwowRating {
+    margin-top: -80px;
+
+    .fa {
+      font-size: 1.6em;
+    }
+  }
+}
+
+@media screen and (min-width: 40em) {
+  .card {
+    flex: 0 1 calc(50% - 1em);
+    max-width: calc(50% - 1em);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .card {
+    flex: 0 1 calc(25% - 1em);
+    max-width: calc(25% - 1em);
+  }
+}

@@ -1,5 +1,6 @@
 import React, { useLayoutEffect } from "react";
 import Button from "../Button/Button";
+import Card from "../Card/Card";
 import "./Modal.scss";
 
 export default function Modal({
@@ -9,17 +10,15 @@ export default function Modal({
   rrp,
   carwow_rating,
   summary,
+  showButtons,
   onClose
 }) {
   function useLockBodyScroll() {
     useLayoutEffect(() => {
-      // Get original value of body overflow
       const originalStyle = window.getComputedStyle(document.body).overflow;
-      // Prevent scrolling on mount
       document.body.style.overflow = "hidden";
-      // Re-enable scrolling when component unmounts
       return () => (document.body.style.overflow = originalStyle);
-    }, []); // Empty array ensures effect is only run on mount and unmount
+    }, []);
   }
 
   useLockBodyScroll();
@@ -27,9 +26,15 @@ export default function Modal({
   return (
     <div className="modal-overlay">
       <div className="modal">
-        <h2>{make}</h2>
-        <p>{model}</p>
-        <p>{summary}</p>
+        <Card
+          make={make}
+          model={model}
+          summary={summary}
+          img_url={img_url}
+          rrp={rrp}
+          carwow_rating={carwow_rating}
+          showButtons={showButtons}
+        />
         <Button label="Close" onClick={onClose}></Button>
       </div>
     </div>

@@ -3,12 +3,10 @@ import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
 import uuid from "uuid";
 import { pure } from "recompose";
+import "./Card.scss";
 
 function Card(props) {
   const [modalOpen, setModalOpen] = useState(false);
-
-  //   const car = { make, model, img_url, rrp, carwow_rating, summary };
-
   return (
     <article key={uuid.v4()} className="card">
       <img
@@ -58,12 +56,14 @@ function Card(props) {
             }
           ></span>
         </div>
-        <a className="button" href={props.model} title={props.model}>
+        {/* <a className="button" href={props.model} title={props.model}>
           <span>Get Offer</span>
         </a>
-        <Button href={props.model} title={props.model} label="Get Offer" />
+        <Button href={props.model} title={props.model} label="Get Offer" /> */}
       </div>
-      <button onClick={() => setModalOpen(true)}>More Info</button>
+      <button className="button" onClick={() => setModalOpen(true)}>
+        <span>More Info</span>
+      </button>
       {modalOpen && (
         <Modal
           model={props.model}
@@ -72,6 +72,7 @@ function Card(props) {
           rrp={props.rrp}
           carwow_rating={props.carwow_rating}
           summary={props.summary}
+          showButtons={props.showButtons}
           onClose={() => setModalOpen(false)}
         />
       )}
