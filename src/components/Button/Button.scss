@@ -47,9 +47,18 @@
   color: #fff;
 }
 
-.closeButton {
+.closeButton,
+.getOfferButton {
   position: absolute;
-  top: -50px;
   right: 2%;
   width: auto;
+  z-index: 1;
+}
+
+.closeButton {
+  top: -50px;
+}
+
+.getOfferButton {
+  bottom: 16px;
 }

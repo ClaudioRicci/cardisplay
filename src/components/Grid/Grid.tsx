@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Card from "../Card/Card";
 import LoadingCircle from "../LoadingCircle/LoadingCircle";
 import { getItem } from "../../methods/generalMethods";
+import uuid from "uuid";
 import { pure } from "recompose";
 import "./Grid.scss";
 
@@ -46,6 +47,7 @@ function Grid() {
                 } = car;
                 return (
                   <Card
+                    key={uuid.v4()}
                     make={make}
                     model={model}
                     img_url={img_url}

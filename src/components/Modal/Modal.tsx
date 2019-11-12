@@ -29,7 +29,7 @@ export default function Modal({
           label="Close"
           onClick={onClose}
           buttonType="button closeButton"
-        ></Button>
+        />
         <Card
           make={make}
           model={model}
@@ -38,6 +38,7 @@ export default function Modal({
           rrp={rrp}
           carwow_rating={carwow_rating}
         />
+        <Button label="Get Offers" buttonType="button getOfferButton" />
       </div>
     </div>
   );

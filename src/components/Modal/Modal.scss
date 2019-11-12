@@ -82,6 +82,10 @@ button {
       border-bottom: 150px solid #000;
     }
 
+    .moreInfoButton {
+      display: none;
+    }
+
     .carwowRating {
       top: 110px;
       position: absolute;
@@ -105,5 +109,9 @@ button {
         padding: 0.4em 1em 0 0;
       }
     }
+  }
+
+  .card:hover {
+    box-shadow: none;
   }
 }

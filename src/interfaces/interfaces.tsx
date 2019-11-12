@@ -14,4 +14,6 @@ export interface CarProps {
   label: string;
   summary: string;
   buttonType: string;
+  link: string;
+  title: string;
 }

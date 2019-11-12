@@ -8,8 +8,8 @@ const Button: React.SFC<CarProps> = props => {
     <a
       data-testid="button"
       className={props.buttonType}
-      href={props.model}
-      title={props.model}
+      href={props.link}
+      title={props.title}
     >
       <span>{props.label}</span>
     </a>
@@ -18,8 +18,8 @@ const Button: React.SFC<CarProps> = props => {
 
 Button.defaultProps = {
   buttonType: "button",
-  model: "Panda",
-  make: "Fiat",
+  link: "link",
+  title: "title",
   label: "Get Details"
 };
 

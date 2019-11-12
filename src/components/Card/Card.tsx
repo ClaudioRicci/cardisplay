@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Button from "../Button/Button";
 import Modal from "../Modal/Modal";
 import uuid from "uuid";
 import { pure } from "recompose";
@@ -61,17 +60,16 @@ function Card(props) {
             }
           ></span>
         </div>
-        {/* <a className="button" href={props.model} title={props.model}>
-          <span>Get Offer</span>
-        </a>
-        <Button href={props.model} title={props.model} label="Get Offer" /> */}
         <div className="summary">
           <p>{props.summary}</p>
         </div>
       </div>
 
       {isTabletOrAbove ? (
-        <button className="button" onClick={() => setModalOpen(true)}>
+        <button
+          className="button moreInfoButton"
+          onClick={() => setModalOpen(true)}
+        >
           <span>More Info</span>
         </button>
       ) : (
