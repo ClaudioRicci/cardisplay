@@ -37,8 +37,8 @@ button {
   height: auto;
 
   .card {
-    width: 100%;
     max-width: 100%;
+    height: 638px;
 
     img {
       float: left;
@@ -46,14 +46,16 @@ button {
       margin: 1em 1.4em;
       position: relative;
       z-index: 2;
+      max-height: 550px;
+      max-width: 814px;
     }
 
     .detailsSurround + .button {
       width: auto;
       position: absolute;
-      bottom: 40px;
+      bottom: 20px;
       z-index: 1;
-      right: 6%;
+      right: 2%;
     }
 
     .leftSectionSurround {
@@ -83,28 +85,25 @@ button {
     .carwowRating {
       top: 110px;
       position: absolute;
-      left: 6%;
+      left: 4%;
     }
 
     .summary {
       display: inline-flex;
-      position: relative;
-      top: -84px;
+      position: absolute;
       height: 0;
       border-bottom: 170px solid #fff;
       border-left: 100px solid transparent;
       z-index: 1;
+      bottom: 15px;
+      width: fit-content;
+      left: 0;
       p {
         line-height: 1.6em;
         font-size: 1.6em;
         text-align: left;
+        padding: 0.4em 1em 0 0;
       }
     }
   }
-}
-
-@media screen and (min-width: 40em) {
-}
-
-@media screen and (min-width: 52em) {
 }
