@@ -23,7 +23,7 @@ export default function Modal({
   useLockBodyScroll();
 
   return (
-    <div className="modal-overlay">
+    <div className="modal-overlay" data-testid="modal">
       <div className="modal">
         <Button
           label="Close"

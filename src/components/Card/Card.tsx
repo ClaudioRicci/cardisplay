@@ -12,7 +12,7 @@ function Card(props) {
   });
 
   return (
-    <article key={uuid.v4()} className="card">
+    <article key={uuid.v4()} className="card" data-testid="card">
       <img
         src={props.img_url}
         alt={props.make + ": " + props.model + ", RRP: " + props.rrp}
