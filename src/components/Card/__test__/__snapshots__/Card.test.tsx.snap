@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Matches snapshot 1`] = `
+<article
+  className="card"
+  data-testid="card"
+>
+  <img
+    alt="undefined: undefined, RRP: undefined"
+  />
+  <div
+    className="detailsSurround"
+  >
+    <div
+      className="leftSectionSurround"
+    >
+      <div
+        className="leftSection"
+      >
+        <h2>
+          Make:
+        </h2>
+        <h2>
+          Model:
+        </h2>
+        <h2>
+          RRP:
+        </h2>
+      </div>
+    </div>
+    <div
+      className="rightSectionSurround"
+    >
+      <div
+        className="rightSection"
+      >
+        <p />
+        <p />
+        <p
+          className="price"
+        >
+          £
+        </p>
+      </div>
+    </div>
+    <div
+      className="carwowRating"
+    >
+      <h3>
+        Carwow Rating
+      </h3>
+      <span
+        className="fa fa-star"
+      />
+      <span
+        className="fa fa-star"
+      />
+      <span
+        className="fa fa-star"
+      />
+      <span
+        className="fa fa-star"
+      />
+      <span
+        className="fa fa-star"
+      />
+    </div>
+    <div
+      className="summary"
+    >
+      <p />
+    </div>
+  </div>
+  <div
+    className="mobileSummarySurround"
+  >
+    <p />
+  </div>
+</article>
+`;

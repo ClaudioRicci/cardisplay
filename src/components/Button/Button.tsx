@@ -7,9 +7,9 @@ const Button: React.SFC<CarProps> = props => {
   return (
     <a
       data-testid="button"
-      className="button"
-      href={props.model}
-      title={props.model}
+      className={props.buttonType}
+      href={props.link}
+      title={props.title}
     >
       <span>{props.label}</span>
     </a>
@@ -17,8 +17,9 @@ const Button: React.SFC<CarProps> = props => {
 };
 
 Button.defaultProps = {
-  model: "Panda",
-  make: "Fiat",
+  buttonType: "button",
+  link: "link",
+  title: "title",
   label: "Get Details"
 };
 

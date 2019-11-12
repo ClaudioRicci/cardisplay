@@ -46,3 +46,19 @@
   background-color: #62c462;
   color: #fff;
 }
+
+.closeButton,
+.getOfferButton {
+  position: absolute;
+  right: 2%;
+  width: auto;
+  z-index: 1;
+}
+
+.closeButton {
+  top: -50px;
+}
+
+.getOfferButton {
+  bottom: 16px;
+}
