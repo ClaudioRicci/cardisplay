@@ -78,17 +78,7 @@ function Card(props) {
         </div>
       )}
 
-      {modalOpen && (
-        <Modal
-          model={props.model}
-          make={props.make}
-          img_url={props.img_url}
-          rrp={props.rrp}
-          carwow_rating={props.carwow_rating}
-          summary={props.summary}
-          onClose={() => setModalOpen(false)}
-        />
-      )}
+      {modalOpen && <Modal {...props} onClose={() => setModalOpen(false)} />}
     </article>
   );
 }
