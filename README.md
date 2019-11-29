@@ -7,8 +7,7 @@
 - Device Responsive UI
 - Semantic Markup
 - Unit Tests for all Components
-
-BONUS: - Analyse JS to analyse size of chunked JS, to ensure performance of app is optimal
+- Analyse JS to analyse size of chunked JS, to ensure performance of app is optimal
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
